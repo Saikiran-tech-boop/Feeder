@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
   private router = inject(Router);
   ngOnInit(): void {
       google.accounts.id.initialize({
-        client_id:'930625038927-o7tbt4l5ii1bpvr1rgm91ne6t4375big.apps.googleusercontent.com',
+        client_id:'171252878087-l3ba7g2anmpti1154b2omvk14mfllklv.apps.googleusercontent.com',
         callback:(resp:any)=>this.handleLogin(resp)
       });
       google.accounts.id.renderButton(document.getElementById("google-btn"),{
