@@ -1,0 +1,91 @@
+.fontDesign {
+  font-family: "Roboto";
+}
+
+ul {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+.button1 {
+  height: 28px;
+  width: 80px;
+  font-size: 14px;
+  position: relative;
+  background-color: orange;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 30px;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.5s ease-in-out;
+  margin: 14px 7px 10px 2px;
+  box-shadow: 1px 1px 200px #e01717;
+}
+
+.button1:hover {
+  box-shadow: 1px 1px 200px #e01717;
+  background-color: red;
+  color: #fff;
+  border: none;
+}
+
+.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+
+
+.img1 {
+  border-radius: 50%;
+  height: 45px;
+  margin: 3px 0px 5px ;
+}
+
+.name1 {
+  margin: 13px 8px 10px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.username{
+    margin-top: 14px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #47d7ac;
+  color:#13294b;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+li a:hover:not(.active) {
+  background-color: cyan;
+}
+
+.active {
+  background-color: #04aa6d;
+}
+
+.title{
+    margin-left: 10px;
+    margin-top: 8px;
+}

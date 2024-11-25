@@ -1,0 +1,78 @@
+<app-header></app-header>
+<button class="backButton"  [routerLink]="['/home']"> &larr;</button>
+<div class="editor-container">
+  <div class="toolbar">
+    <button class="toolbar-btn" (click)="preview()">Preview</button>
+    <button class="toolbar-btn" (click)="publish()">Publish</button>
+  </div>
+
+  <div class="editor-body">
+    
+    <input
+      type="text"
+      [(ngModel)]="article.title"
+      placeholder="My first article..."
+      class="input-title"
+    />
+
+   
+    <div class="thumbnail-upload">
+      <label for="thumbnail">Add thumbnail</label> &nbsp;
+      <input type="file" id="thumbnail" (change)="uploadThumbnail($event)" />
+    </div>
+    <img *ngIf="article.thumbnail" [src]="article.thumbnail" class="thumbnail" />
+
+    
+    <div class="category-selector">
+      <label for="category">Select categories:</label>
+      <select id="category" [(ngModel)]="article.category">
+        <option value="Tech">Tech</option>
+        <option value="Health">Health</option>
+        <option value="Finance">Finance</option>
+      </select>
+    </div>
+
+    
+    <div class="tags-section">
+      <h4>Add Tags</h4>
+      <div>
+        <input
+          type="text"
+          [(ngModel)]="newTag"
+          placeholder="Enter a tag"
+          (keyup.enter)="addTag()"
+        />
+        <button (click)="addTag()">Add Tag</button>
+      </div>
+      <div class="tag-list">
+        <span *ngFor="let tag of article.tags" class="tag">
+          {{ tag }}
+          <button (click)="removeTag(tag)">x</button>
+        </span>
+      </div>
+    </div>
+
+    
+    <quill-editor
+      [(ngModel)]="article.description"
+      [modules]="editorModules"
+      placeholder="Start writing here..."
+    ></quill-editor>
+  </div>
+
+  
+  <div class="preview-modal" *ngIf="showPreview">
+    <div class="preview-content">
+      <h2>Preview</h2>
+      <h3>{{ article.title }}</h3>
+      <p><strong>Category:</strong> {{ article.category }}</p>
+      <img *ngIf="article.thumbnail" [src]="article.thumbnail" class="thumbnail"/>
+      <div [innerHTML]="article.description"></div>
+      <div class="tags">
+        <strong>Tags:</strong> &nbsp;
+        <span *ngFor="let tag of article.tags" class="tag">{{ tag }}</span>
+      </div>
+      <button class="toolbar-btn" (click)="closePreview()">Close</button>
+    </div>
+  </div>
+</div>

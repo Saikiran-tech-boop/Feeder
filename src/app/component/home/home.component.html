@@ -1,0 +1,73 @@
+<app-header></app-header>
+<div class="container">
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchQuery" 
+      (ngModelChange)="onSearch()" 
+      placeholder="Search..."
+    />
+  </div> 
+  <div class="content">
+    <div class="articles-section">
+      <div class="featured-article">
+        <img
+          src="https://images.unsplash.com/photo-1557804506-e969d7b32a4b?q=80&w=2045&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Featured Article Image"
+          class="featured-image"
+        />
+        <div class="featured-content">
+          <h2>Demystifying Blockchain: Was it intentionally made confusing?</h2>
+          <p>
+            For many, the concept of blockchain can seem perplexing and shrouded
+            in mystery...
+          </p>
+          <div class="featured-info">
+            <span>Today</span> · <span>10k views</span> &nbsp;&nbsp;·
+            <span>📖 15 min read</span>&nbsp;
+            <span>👤 Benjamin Foster</span>
+          </div>
+        </div>
+      </div>
+
+      <div *ngFor="let article of articles()" class="article-card">
+        <div class="article-content">
+          <h3>
+            <a [routerLink]="['/article', article.id]">{{ article.title }}</a>
+          </h3>
+
+          <div class="desContainer"  [innerHTML]="article.description" ></div>
+          <div class="article-info">
+            <span>{{ article.date }}</span> &nbsp;·
+            <span>{{ article.views }} views</span> &nbsp; ·
+            <span>📖 {{ article.readTime }} min read</span>&nbsp;&nbsp;
+            <span>👤 {{ article.author }}</span
+            >&nbsp;&nbsp;
+            <button (click)="toggleBookmark(article.id)" class="bookmark-btn">
+              <i
+                [class]="
+                  isBookmarked(article.id)
+                    ? 'fas fa-bookmark'
+                    : 'far fa-bookmark'
+                "
+              ></i>
+            </button>
+          </div>
+        </div>
+        <img
+          [src]="article.thumbnail"
+          alt="Article Image"
+          class="article-image"
+        />
+      </div>
+
+      <div class="see-more">
+        <button>See more</button>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <button [routerLink]="['/createpost']" class="draft-button">Draft an article ✏️</button>
+    </div>
+  </div>
+</div>

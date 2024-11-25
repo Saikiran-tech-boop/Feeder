@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="discover-container">
+  <header>
+    <h2>Discover</h2>
+    <p>Step into a new zone, join a new conversation.</p>
+    <input
+      [(ngModel)]="searchQuery"
+      (input)="onSearch()"
+      placeholder="Search authors by name..."
+      class="search-input"
+    />
+  </header>
+
+  <section class="trending-keywords">
+    <span>Trending keywords:</span>
+    <button
+      *ngFor="
+        let keyword of [
+          '#Everything Explained',
+          '#Tech Reads',
+          '#Family Therapy'
+        ]
+      "
+    >
+      {{ keyword }}
+    </button>
+  </section>
+
+  <section class="readers-choice">
+    <h3>Readers' choice</h3>
+    <div class="article-cards">
+      <div *ngFor="let choice of [1, 2, 3, 4]" class="article-card">
+        <div class="thumbnail-placeholder"><img width="175px" src="https://media.istockphoto.com/id/2013848574/photo/the-internet-was-attacked-worldwide-causing-a-major-disruption-3d-rendering.jpg?s=1024x1024&w=is&k=20&c=K8oj4_CY3_RIo-EVfdlsLMNIqb8Pwe9RHq2HJFA7Vko="></div>
+        <b>No Internet {{choice}}</b>
+      </div>
+    </div>
+  </section>
+
+  <section class="rising-authors">
+    <h3>Rising authors</h3>
+    <div class="author-cards">
+      <div *ngFor="let author of filteredAuthors" class="author-card">
+        <img
+          [src]="author.profilePicture"
+          alt="{{ author.name }}"
+          class="author-image"
+        />
+        <h4>{{ author.name }}</h4>
+        <p class="author-bio">{{ author.bio }}</p>
+        <span class="author-category">{{ author.category }}</span>
+        <span class="author-views">{{ author.views }}+ views</span>
+        <button class="visit-button">Visit</button>
+      </div>
+    </div>
+  </section>
+</div>

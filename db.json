@@ -1,0 +1,26 @@
+{
+    "articles": [
+      {
+        "id": 1,
+        "title": "Sample Article 1",
+        "thumbnail": "url_to_image_1",
+        "description": "Brief description 1...",
+        "author": "Author 1",
+        "publishDate": "2024-01-01",
+        "popularity": 100,
+        "isFeatured": true,
+        "editorPick": false
+      },
+      {
+        "id": 2,
+        "title": "Sample Article 2",
+        "thumbnail": "url_to_image_2",
+        "description": "Brief description 2...",
+        "author": "Author 2",
+        "publishDate": "2024-02-01",
+        "popularity": 200,
+        "isFeatured": false,
+        "editorPick": true
+      }
+    ]
+  }

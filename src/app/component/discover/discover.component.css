@@ -1,0 +1,96 @@
+.discover-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 40px;
+
+  }
+  
+  header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    margin-bottom: 15px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .trending-keywords {
+    margin-bottom: 30px;
+  }
+  
+  .trending-keywords span {
+    font-weight: bold;
+  }
+  
+  .trending-keywords button {
+    background: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .readers-choice, .rising-authors {
+    margin-bottom: 30px;
+  }
+  
+  .article-cards, .author-cards {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .article-card, .author-card {
+    background: #f9f9f9;
+    padding: 15px;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .article-card .thumbnail-placeholder,
+  .author-card .author-image {
+    width: 100%;
+    height: 100px;
+    background: #e0e0e0;
+    margin-bottom: 10px;
+  }
+  
+  .author-card h4 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+  }
+  
+  .author-card .author-bio {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .author-card .author-category {
+    display: block;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .author-card .author-views {
+    display: block;
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .visit-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
